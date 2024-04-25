@@ -18,3 +18,5 @@ you can create a different settings file for each environment.<b>
 
 Step 7: Create an app called "blog" and add  it to INSTALLED_APPS in setting.py<br/>
 To do this, you need to open the mysite folder inside the mysite folder and then edit the setting.py file.
+
+Step  8: Creating the Post model in models.py file, we will define a Post model that will allow us to store blog posts in the database.
