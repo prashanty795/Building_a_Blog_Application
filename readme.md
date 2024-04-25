@@ -20,3 +20,6 @@ Step 7: Create an app called "blog" and add  it to INSTALLED_APPS in setting.py<
 To do this, you need to open the mysite folder inside the mysite folder and then edit the setting.py file.
 
 Step  8: Creating the Post model in models.py file, we will define a Post model that will allow us to store blog posts in the database.
+![alt text](ScreenShots/1.png)
+
+Step 9: By adding different datetime fields to the Post model.Each post will be published at a specific date and time.
