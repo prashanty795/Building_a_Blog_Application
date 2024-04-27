@@ -2,6 +2,11 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 
+class PublishedManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset()\
+            .filter(status=Post.Status.PUBLISHED)
+
 class Post(models.Model):
     """
     A model representing a blog post.
@@ -17,6 +22,9 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)  # When this object was created (on save)
     updated = models.DateTimeField(auto_now=True)  # When this object was last updated (on save)
     status = models.CharField(max_length=2, choices=Status.choices, default=Status.DRAFT) #  The current status of the post
+
+    objects = models.Manager()    # The default manager.
+    published = PublishedManager()  # Custom Manager, Used to filter posts by status.
 
     class Meta:
         ordering = [ '-publish'] # Orders by most recent posts first
